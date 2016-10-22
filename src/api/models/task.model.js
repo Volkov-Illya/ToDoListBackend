@@ -27,5 +27,5 @@ var TaskSchema = new Schema({
     subtask: [SubTask]
 });
 
-module.exposts = TaskSchema;
+module.exports = TaskSchema;
 
