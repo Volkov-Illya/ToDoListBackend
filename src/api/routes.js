@@ -6,4 +6,7 @@ const taskCtrl = require('./controllers/taskCtrl');
 router.get('/todo', taskCtrl.getAll);
 router.post('/todo', taskCtrl.create);
 
+router.put('/todo/:id/isDone', taskCtrl.isDone);
+router.put('/todo/:id/isFavourite', taskCtrl.isFavourite);
+
 module.exports = router;
