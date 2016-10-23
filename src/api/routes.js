@@ -3,6 +3,7 @@ var router = express.Router();
 const taskCtrl = require('./controllers/taskCtrl');
 
 /* GET users listing. */
-router.get('/', taskCtrl.getAll);
+router.get('/todo', taskCtrl.getAll);
+router.post('/todo', taskCtrl.create);
 
 module.exports = router;

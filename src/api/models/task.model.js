@@ -27,5 +27,5 @@ var TaskSchema = new Schema({
     subtask: [SubTask]
 });
 
-module.exports = TaskSchema;
+module.exports = mongoose.model('Task', TaskSchema);
 
