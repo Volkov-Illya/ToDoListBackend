@@ -7,25 +7,26 @@ const SubTask = require('./subtask.model');
  ********************************************************************************/
 
 var TaskSchema = new Schema({
-    name: {
-        type: String,
-        maxlength: 80,
-        required: true
+        name: {
+            type: String,
+            maxlength: 80,
+            required: true
+        },
+        description: {
+            type: String,
+            maxlength: 5000
+        },
+        isDone: {
+            type: Boolean,
+            default: false
+        },
+        isFavourite: {
+            type: Boolean,
+            default: false
+        },
+        subtask: [SubTask]
     },
-    description: {
-        type: String,
-        maxlength: 5000
-    },
-    isDone: {
-        type: Boolean,
-        default: false
-    },
-    isFavourite: {
-        type: Boolean,
-        default: false
-    },
-    subtask: [SubTask]
-});
+    {timestamps: true});
 
-module.exports = TaskSchema;
+module.exports = mongoose.model('Task', TaskSchema);
 

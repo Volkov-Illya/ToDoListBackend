@@ -1,0 +1,6 @@
+const taskModel = require('../models/task.model');
+
+module.exports.create = (data) => taskModel.create(data).then(res => res);
+
+module.exports.getAll = () => taskModel.find();
+

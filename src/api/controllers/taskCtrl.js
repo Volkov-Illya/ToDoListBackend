@@ -1,10 +1,5 @@
+const taskService = require('../service/taskService');
 
-module.exports = {
-    getAll: getAll
-};
+module.exports.getAll = (req, res) => taskService.getAll().then(result => res.send(result));
 
-
-function getAll(req, res) {
-    console.log('here');
-    res.send('Hello from controller');
-}
+module.exports.create = (req, res) => taskService.create(req.body).then(result => res.send(result));
