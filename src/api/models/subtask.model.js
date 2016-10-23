@@ -17,8 +17,17 @@ var SubTaskSchema = new Schema({
         type: Boolean,
         default: false
     }
+}, {
+    strict: false, timestamps: true
 });
 
-module.exports = mongoose.model('SubTask', SubTaskSchema);
+SubTaskSchema.set('toJSON', {
+    transform: function(doc, ret, options) {
+        ret.id = ret._id.toString();
+        return ret;
+    }
+});
+
+module.exports = SubTaskSchema;
 
 
