@@ -24,7 +24,9 @@ var TaskSchema = new Schema({
             type: Boolean,
             default: false
         },
-        subtask: [SubTask]
+        subTask: {
+            type: [SubTask]
+        }
     },
     {timestamps: true});
 
