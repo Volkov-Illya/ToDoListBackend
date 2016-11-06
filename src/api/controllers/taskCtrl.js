@@ -2,6 +2,7 @@ const taskService = require('../service/taskService');
 
 module.exports.create = (req, res) => taskService.create(req.body).then(result => res.send(result));
 module.exports.getAll = (req, res) => taskService.getAll().then(result => res.send(result));
+module.exports.getOne = (req, res) => taskService.getOne(req.params.id).then(result => res.send(result));
 module.exports.isDone = (req, res) => taskService.isDone(req.params.id).then(result => res.send(result));
 module.exports.isFavourite = (req, res) => taskService.isFavourite(req.params.id).then(result => res.send(result));
 module.exports.updateTask = (req, res) => taskService.updateTask(req.params.id, req.body).then(result => res.send(result));

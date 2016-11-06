@@ -11,6 +11,7 @@ module.exports.create = (data) => taskModel.create(data).then(res => res);
 
 module.exports.getAll = () => taskModel.find().sort({isDone: 1, name: 1});
 
+module.exports.getOne = (id) => taskModel.findById(id).then(res => res);
 
 module.exports.isDone = (id) => taskModel.findById(id).then((task) => {
     task.isDone = task.isDone ? false : true;
