@@ -27,7 +27,15 @@ var TaskSchema = new Schema({
         subTask: {
             type: [SubTask]
         }
+
     },
     {timestamps: true});
+
+TaskSchema.set('toJSON', {
+    transform: function(doc, ret, options) {
+        ret.id = ret._id.toString();
+        return ret;
+    }
+});
 
 module.exports = mongoose.model('Task', TaskSchema);
