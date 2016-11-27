@@ -2,7 +2,8 @@
 
 let mongoose = require('mongoose');
 mongoose.promise = require('bluebird');
-process.env.MONGOOSE_URL = 'mongodb://localhost:/todolist';
+
+const mongoUrl = process.env.MONGOOSE_URL ||  'mongodb://localhost:/todolist';
 
 module.exports = {
     init: init,
@@ -10,7 +11,7 @@ module.exports = {
 };
 
 function init() {
-    mongoose.connect(process.env.MONGOOSE_URL, (err, res) => {
+    mongoose.connect(mongoUrl, (err, res) => {
         if (err) console.log('Something wrong was happen');
         console.log('db connected');
     });
