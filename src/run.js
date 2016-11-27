@@ -4,6 +4,7 @@ let mongoose = require('mongoose');
 mongoose.promise = require('bluebird');
 
 const mongoUrl = process.env.MONGOOSE_URL ||  'mongodb://localhost:/todolist';
+//mongodb://Volkov-Illya:test12345@ds111748.mlab.com:11748/todolist
 
 module.exports = {
     init: init,
